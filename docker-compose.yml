@@ -1,0 +1,6 @@
+services:
+  biobook:
+    build: .
+    ports:
+      - "80:80"
+    restart: unless-stopped

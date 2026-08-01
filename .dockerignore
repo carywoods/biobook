@@ -1,0 +1,12 @@
+# Don't send these to Docker build context
+.git
+_book
+_freeze
+pdfs/*.pdf
+scripts/perl/extracted/
+scripts/extracted_v2/
+__pycache__
+*.pyc
+.env
+*.log
+meta/
