@@ -1,7 +1,12 @@
-FROM ghcr.io/quarto-dev/quarto:1.6 AS build
+FROM python:3.11-slim AS build
 
-# Install Python and dependencies
-RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
+# Install Quarto
+RUN apt-get update && apt-get install -y curl git && rm -rf /var/lib/apt/lists/*
+RUN curl -sLO https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.42/quarto-1.6.42-linux-amd64.deb && \
+    dpkg -i quarto-1.6.42-linux-amd64.deb && \
+    rm quarto-1.6.42-linux-amd64.deb
+
+# Install Python dependencies
 RUN pip install --no-cache-dir biopython pandas numpy matplotlib openai jupyter nbformat nbclient ipykernel
 
 WORKDIR /app
