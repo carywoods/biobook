@@ -1,0 +1,68 @@
+---
+title: "Bioinformatics with AI: A Modern Introduction"
+---
+
+# Welcome {.unnumbered}
+
+This textbook teaches modern bioinformatics to college undergraduates -- freshmen and sophomores with no biology or programming prerequisites.
+
+You'll learn Python through biological problems. You'll use AI to interpret results. And by the end of the course, you'll be able to analyze DNA sequences, search biological databases, predict protein structures, and build bioinformatics pipelines.
+
+::: {.callout-tip}
+## How to use this book
+
+**Every chapter has two versions of each script:**
+
+- **Vanilla** scripts teach the fundamentals using standard Python
+- **AI** scripts show how large language models enhance the workflow
+
+Learn the vanilla first. Always learn the vanilla first.
+:::
+
+## What You'll Learn
+
+- Read and analyze DNA, RNA, and protein sequences
+- Navigate biological databases (NCBI, PDB, UniProt)
+- Perform sequence alignment and BLAST searches
+- Analyze gene expression data
+- Understand protein structure prediction (AlphaFold)
+- Use AI as a biological reasoning partner
+- Build reproducible bioinformatics pipelines
+
+## What You Need
+
+- Python 3.8+ (free from [python.org](https://www.python.org/))
+- A text editor or IDE (VS Code recommended)
+- An internet connection
+- Curiosity
+
+::: {.callout-note}
+## No biology prerequisites
+Every biological concept is explained from scratch. If you know that DNA is "the stuff that makes you who you are," you know enough to start.
+:::
+
+::: {.callout-note}
+## No programming prerequisites
+If you've written HTML, used Scratch, or taken any coding class, you have enough foundation. We'll teach you Python from the ground up.
+:::
+
+## Getting Started
+
+1. Install Python and the required packages (see @sec-setup)
+2. Download the book's scripts from the repository
+3. Open Chapter 1 and start coding
+
+```{python}
+#| eval: false
+# Your first bioinformatics program
+dna = "ATGCGATCGATCGATCGATCG"
+print(f"This DNA sequence has {len(dna)} bases")
+```
+
+## About This Book
+
+This book was written for a one-semester introductory bioinformatics course. The 14 chapters map to a 15-week semester (one chapter per week, with a review week).
+
+The AI features require an API key from a free provider (Google Gemini recommended). See @sec-setup for setup instructions. All vanilla scripts work without any API key.
+
+Published by **Envoi Publishing**, Indianapolis, Indiana.

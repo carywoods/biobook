@@ -1,0 +1,84 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Bioinformatics with AI"
+  subtitle: "A Modern Introduction"
+  author: "Dr. Cary Woods"
+  date: "2026"
+  repo-url: https://github.com/envoi-publishing/bioinformatics-with-ai
+  site-url: https://envoi-publishing.github.io/bioinformatics-with-ai
+  
+  chapters:
+    - index.qmd
+    - part: "Part I: Foundations"
+      chapters:
+        - chapters/ch01-language-of-life.qmd
+        - chapters/ch02-python-basics.qmd
+        - chapters/ch03-central-dogma.qmd
+        - chapters/ch04-biological-data.qmd
+    - part: "Part II: Analysis"
+      chapters:
+        - chapters/ch05-alignment.qmd
+        - chapters/ch06-motifs.qmd
+        - chapters/ch07-expression.qmd
+        - chapters/ch08-protein-structure.qmd
+    - part: "Part III: Modern Genomics"
+      chapters:
+        - chapters/ch09-genome-analysis.qmd
+        - chapters/ch10-metagenomics.qmd
+        - chapters/ch11-single-cell.qmd
+    - part: "Part IV: AI-Native Bioinformatics"
+      chapters:
+        - chapters/ch12-llm-reasoning.qmd
+        - chapters/ch13-pipelines.qmd
+        - chapters/ch14-capstone.qmd
+    - references.qmd
+
+  appendices:
+    - appendices/appendix-a-python.qmd
+    - appendices/appendix-b-biopython.qmd
+    - appendices/appendix-c-command-line.qmd
+    - appendices/appendix-d-perl-legacy.qmd
+    - appendices/appendix-e-glossary.qmd
+    - appendices/appendix-f-setup.qmd
+
+bibliography: references.bib
+csl: apa.csl
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    code-fold: false
+    code-tools: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    fig-width: 8
+    fig-height: 6
+  pdf:
+    documentclass: scrbook
+    papersize: letter
+    fontsize: 11pt
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1.25in
+      - right=1.25in
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhead[LE,RO]{\thepage}
+        \fancyhead[RE]{\leftmark}
+        \fancyhead[LO]{\rightmark}
+  epub:
+    cover-image: figures/cover.png
+
+execute:
+  freeze: auto
+  warning: false
+  message: false

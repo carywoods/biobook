@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Quarto output
+_book/
+_freeze/
+*_files/
+*.html
+!index.html
+
+# Generated figures
+figures/*.png
+figures/*.svg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files (not distributed)
+pdfs/*.pdf
+scripts/perl/extracted/
+scripts/extracted_v2/
+
+# Environment
+.env
+*.log

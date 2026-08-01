@@ -1,0 +1,32 @@
+# Bioinformatics with AI: A Modern Introduction
+# Python dependencies
+
+# Core (required for all chapters)
+biopython>=1.80
+pandas>=1.5
+numpy>=1.23
+matplotlib>=3.6
+
+# AI features (optional -- scripts degrade gracefully without these)
+openai>=1.0
+
+# AI SETUP (see Appendix F for full instructions):
+#
+# Recommended: Google Gemini (free, no credit card)
+#   1. Go to aistudio.google.com, sign in, get API key
+#   2. Set environment variables:
+#      export OPENAI_API_KEY="your-key"
+#      export OPENAI_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai"
+#      export OPENAI_MODEL="gemini-2.5-flash"
+#
+# Backup: Groq (free, no credit card)
+#   export OPENAI_API_KEY="your-key"
+#   export OPENAI_BASE_URL="https://api.groq.com/openai/v1"
+#   export OPENAI_MODEL="llama-3.3-70b-instruct"
+#
+# See Appendix F for all options.
+
+# Optional (advanced chapters)
+# scanpy>=1.9      # Chapter 11: single-cell analysis
+# anndata>=0.9     # Chapter 11: single-cell data structures
+# snakemake>=7.0   # Chapter 13: pipeline construction
