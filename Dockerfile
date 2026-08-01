@@ -21,20 +21,8 @@ FROM nginx:alpine
 # Copy built book
 COPY --from=build /app/_book /usr/share/nginx/html
 
-# nginx config
-RUN echo 'server { \
-    listen 80; \
-    server_name localhost; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    location / { \
-        try_files $uri $uri/ $uri.html =404; \
-    } \
-    location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ { \
-        expires 1y; \
-        add_header Cache-Control "public, immutable"; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Copy nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
