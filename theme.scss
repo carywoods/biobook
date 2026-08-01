@@ -1,0 +1,49 @@
+/*-- scss:defaults --*/
+
+// Bioinformatics with AI -- Minty theme with custom overrides
+// Based on Quarto's minty theme
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
+$font-family-monospace: 'Fira Code', 'Consolas', 'Monaco', monospace !default;
+
+// Colors
+$primary: #2d6a4f !default;
+$secondary: #74c69d !default;
+$success: #52b788 !default;
+$info: #457b9d !default;
+$warning: #f4a261 !default;
+$danger: #e63946 !default;
+
+$body-bg: #f8f9fa !default;
+$body-color: #212529 !default;
+
+$headings-color: #1b4332 !default;
+$headings-font-weight: 600 !default;
+
+// Links
+$link-color: #2d6a4f !default;
+$link-hover-color: #1b4332 !default;
+$link-decoration: none !default;
+
+// Code
+$code-color: #e63946 !default;
+$code-bg: #f8f9fa !default;
+
+// Sidebar
+$sidebar-bg: #f8f9fa !default;
+$sidebar-color: #212529 !default;
+$sidebar-link-color: #2d6a4f !default;
+$sidebar-link-hover-color: #1b4332 !default;
+
+// Borders
+$border-radius: 6px !default;
+$border-color: #dee2e6 !default;
+
+// Callouts
+$callout-color-note: #457b9d !default;
+$callout-color-tip: #52b788 !default;
+$callout-color-warning: #f4a261 !default;
+$callout-color-important: #e63946 !default;

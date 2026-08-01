@@ -12,9 +12,9 @@ book:
   
   sidebar:
     style: "floating"
-    background: "#0f3460"
-    color: "white"
-    border: false
+    background: "#f8f9fa"
+    color: "dark"
+    border: true
     
   page-navigation: true
   page-footer:
@@ -62,7 +62,7 @@ csl: apa.csl
 format:
   html:
     theme:
-      light: cosmo
+      light: minty
       dark: darkly
     css: styles.css
     code-fold: false
@@ -80,6 +80,12 @@ format:
     smooth-scroll: true
     link-external-icon: true
     link-external-newwindow: true
+    fontsize: 1.0em
+    grid:
+      sidebar-width: 280px
+      body-width: 900px
+      margin-width: 260px
+      gutter-width: 1.5rem
   pdf:
     documentclass: scrbook
     papersize: letter
