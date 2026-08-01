@@ -28,3 +28,10 @@ scripts/extracted_v2/
 # Environment
 .env
 *.log
+
+/.quarto/
+_book/
+_freeze/
+*.html
+!index.html
+apa.csl
