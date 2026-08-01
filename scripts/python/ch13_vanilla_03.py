@@ -7,7 +7,6 @@ Concept: pipeline design, subprocess, chaining steps, output
 """
 
 import os
-import subprocess
 import tempfile
 
 

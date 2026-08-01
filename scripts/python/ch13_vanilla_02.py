@@ -8,7 +8,6 @@ Concept: try/except, file validation, error messages, defensive programming
 """
 
 import os
-import sys
 
 
 def read_sequence_file(filename: str) -> str:

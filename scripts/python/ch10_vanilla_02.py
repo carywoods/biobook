@@ -7,7 +7,6 @@ Concept: beta diversity, PCoA, sample comparison
 """
 
 import math
-from collections import Counter
 
 # Three samples: healthy, antibiotic-treated, disease
 samples = {

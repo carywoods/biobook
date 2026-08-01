@@ -7,7 +7,6 @@ Concept: classification, real data, pandas basics, biological measurement
 """
 
 import pandas as pd
-from collections import Counter
 
 # The Iris dataset: 150 flowers, 4 measurements, 3 species
 # Measurements are in centimeters
