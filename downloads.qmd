@@ -4,21 +4,28 @@ title: "Downloads"
 
 # Downloads {.unnumbered}
 
-All scripts from this book are available for download. Each chapter has two versions of every script:
+All scripts from this book are available for download.
+
+## Download All Scripts
+
+[biobook-all-scripts.tar.gz](downloads/biobook-all-scripts.tar.gz) (68 KB) -- Python and Perl scripts, ready to use.
+
+```bash
+tar -xzf biobook-all-scripts.tar.gz
+```
+
+## Python Scripts Only
+
+[biobook-python-scripts.tar.gz](downloads/biobook-python-scripts.tar.gz) (47 KB) -- 39 vanilla + 39 AI scripts.
+
+```bash
+tar -xzf biobook-python-scripts.tar.gz
+```
+
+Each chapter has two versions of every script:
 
 - **Vanilla** scripts use standard Python and BioPython
 - **AI** scripts add LLM-powered interpretation (requires an API key)
-
-## Python Scripts
-
-78 scripts (39 vanilla + 39 AI)
-
-```bash
-# Download all Python scripts
-# Or clone the repository:
-git clone https://github.com/carywoods/biobook.git
-cd biobook/scripts/python
-```
 
 | Chapter | Scripts | Topic |
 |---------|---------|-------|
@@ -39,14 +46,13 @@ cd biobook/scripts/python
 
 ## Perl Scripts (Historical Reference)
 
-49 companion scripts from "Beginning Perl for Bioinformatics" by James Tisdall.
-
-These are the original Perl scripts that inspired the Python translations in this book. They are provided for historical context and for students interested in comparing Perl and Python approaches to bioinformatics.
+[biobook-perl-scripts.tar.gz](downloads/biobook-perl-scripts.tar.gz) (22 KB) -- 49 companion scripts from "Beginning Perl for Bioinformatics" by James Tisdall.
 
 ```bash
-git clone https://github.com/carywoods/biobook.git
-cd biobook/scripts/perl/companion
+tar -xzf biobook-perl-scripts.tar.gz
 ```
+
+These are the original Perl scripts that inspired the Python translations in this book. They are provided for historical context and for students interested in comparing Perl and Python approaches to bioinformatics.
 
 ## Repository
 
