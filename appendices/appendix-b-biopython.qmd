@@ -1,5 +1,197 @@
 ---
-title: "Appendix B: BioPython Cheat Sheet"
+title: "BioPython Cheat Sheet"
 ---
 
-## Coming Soon
+# BioPython Cheat Sheet {#sec-biopython}
+
+## Installation
+
+```bash
+pip install biopython
+```
+
+## Reading Sequences
+
+```{python}
+#| eval: false
+from Bio import SeqIO
+
+# Read a single FASTA record
+record = SeqIO.read("sequence.fasta", "fasta")
+print(record.id)           # Sequence ID
+print(record.description)  # Full description
+print(record.seq)          # The sequence
+print(len(record.seq))     # Length
+
+# Read multiple records
+for record in SeqIO.parse("sequences.fasta", "fasta"):
+    print(f"{record.id}: {len(record.seq)} bp")
+
+# Read GenBank
+record = SeqIO.read("sequence.gb", "genbank")
+print(record.features)     # List of features
+print(record.annotations)  # Metadata
+```
+
+## Writing Sequences
+
+```{python}
+#| eval: false
+from Bio.SeqRecord import SeqRecord
+from Bio.Seq import Seq
+
+# Create a record
+record = SeqRecord(
+    Seq("ATGCGATCGATCG"),
+    id="seq001",
+    description="example sequence"
+)
+
+# Write to FASTA
+SeqIO.write([record], "output.fasta", "fasta")
+
+# Write to GenBank
+SeqIO.write([record], "output.gb", "genbank")
+```
+
+## Sequence Operations
+
+```{python}
+#| eval: false
+from Bio.Seq import Seq
+
+dna = Seq("ATGCGATCG")
+
+# Complement
+dna.complement()        # "TAGCTAGC"
+
+# Reverse complement
+dna.reverse_complement()  # "CGATCGCAT"
+
+# Transcription (DNA to RNA)
+rna = dna.transcribe()  # "AUGCGAUCG"
+
+# Translation (DNA to protein)
+protein = dna.translate()  # "MR*"
+
+# Translate with specific table
+protein = dna.translate(table=1)  # Standard genetic code
+
+# Find open reading frames
+for strand, seq in [(+1, dna), (-1, dna.reverse_complement())]:
+    for frame in range(3):
+        trans = seq[frame:].translate()
+        print(f"Frame {frame} {'+' if strand == 1 else '-'}: {trans}")
+```
+
+## BLAST Search
+
+```{python}
+#| eval: false
+from Bio.Blast import NCBIWWW
+from Bio.Blast import NCBIXML
+
+# Run BLAST online
+result = NCBIWWW.qblast("blastn", "nt", "ATGCGATCGATCG")
+
+# Parse results
+blast_records = NCBIXML.parse(result)
+for record in blast_records:
+    for alignment in record.alignments:
+        for hsp in alignment.hsps:
+            print(f"Sequence: {alignment.title}")
+            print(f"Score: {hsp.score}")
+            print(f"E-value: {hsp.expect}")
+            print(f"Identity: {hsp.identities}/{hsp.align_length}")
+```
+
+## Entrez (NCBI Database Access)
+
+```{python}
+#| eval: false
+from Bio import Entrez
+
+Entrez.email = "your.email@example.com"
+
+# Search
+handle = Entrez.esearch(db="nucleotide", term="BRCA1 human")
+record = Entrez.read(handle)
+print(f"Found {record['Count']} results")
+print(f"IDs: {record['IdList'][:5]}")
+
+# Fetch
+handle = Entrez.efetch(db="nucleotide", id="NM_007294", rettype="fasta")
+print(handle.read())
+
+# Fetch GenBank
+handle = Entrez.efetch(db="nucleotide", id="NM_007294", rettype="gb")
+record = SeqIO.read(handle, "genbank")
+```
+
+## Alignment
+
+```{python}
+#| eval: false
+from Bio import pairwise2
+from Bio.pairwise2 import format_alignment
+
+# Global alignment
+alignments = pairwise2.align.globalxx("ATGCG", "ATGAG")
+
+# Print best alignment
+print(format_alignment(*alignments[0]))
+
+# Local alignment
+alignments = pairwise2.align.localxx("ATGCG", "ATGAG")
+```
+
+## Restriction Enzymes
+
+```{python}
+#| eval: false
+from Bio import Restriction
+
+# Get a restriction enzyme
+ecoRI = Restriction.EcoRI
+print(f"Recognition site: {ecoRI.site}")  # "GAATTC"
+
+# Find cut sites in a sequence
+from Bio.Seq import Seq
+dna = Seq("ATGCGAATTCGATCG")
+sites = ecoRI.search(dna)
+print(f"Cut sites: {sites}")  # [5]
+
+# List all available enzymes
+print(dir(Restriction))
+```
+
+## Working with PDB Files
+
+```{python}
+#| eval: false
+from Bio.PDB import PDBParser
+
+parser = PDBParser(QUIET=True)
+structure = parser.get_structure("1TUP", "1TUP.pdb")
+
+# Iterate over atoms
+for model in structure:
+    for chain in model:
+        for residue in chain:
+            for atom in residue:
+                print(atom.name, atom.coord)
+
+# Get sequence from PDB
+from Bio.PDB import PPBuilder
+ppb = PPBuilder()
+for pp in ppb.build_peptides(structure):
+    print(pp.get_sequence())
+```
+
+::: {.callout-tip}
+## BioPython Documentation
+
+Full documentation: [biopython.org](https://biopython.org/wiki/Documentation)
+
+Tutorial: [biopython.org/wiki/SeqIO](https://biopython.org/wiki/SeqIO)
+:::

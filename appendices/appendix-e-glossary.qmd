@@ -1,5 +1,171 @@
 ---
-title: "Appendix E: Glossary of Biological Terms"
+title: "Glossary of Biological Terms"
 ---
 
-## Coming Soon
+# Glossary of Biological Terms {#sec-glossary}
+
+## A
+
+**Amino acid** -- The building blocks of proteins. There are 20 standard amino acids, each coded by one or more codons.
+
+**AnnData** -- A Python data structure for annotated data matrices, commonly used in single-cell analysis.
+
+**AlphaFold** -- An AI system by DeepMind that predicts protein 3D structure from amino acid sequence.
+
+**ATP** -- Adenosine triphosphate, the primary energy carrier in cells.
+
+## B
+
+**Base pair (bp)** -- Two nucleotides on opposite DNA strands connected by hydrogen bonds. A pairs with T; C pairs with G.
+
+**BioPerl** -- A collection of Perl modules for bioinformatics.
+
+**BioPython** -- A collection of Python modules for bioinformatics.
+
+**BLAST** -- Basic Local Alignment Search Tool. A program for comparing sequences against databases.
+
+## C
+
+**Chromosome** -- A long DNA molecule containing many genes. Humans have 23 pairs of chromosomes.
+
+**Clone** -- A DNA fragment inserted into a vector for replication.
+
+**Codon** -- A sequence of three nucleotides that codes for a specific amino acid.
+
+**Complementary DNA (cDNA)** -- DNA synthesized from an RNA template.
+
+**CRISPR** -- A gene-editing tool that can cut DNA at specific locations.
+
+## D
+
+**Deletion** -- A mutation where one or more nucleotides are removed from a sequence.
+
+**Differential expression** -- Genes that are expressed at different levels between conditions.
+
+**DNA (Deoxyribonucleic acid)** -- The molecule that carries genetic information. A double helix of four nucleotide bases: A, T, C, G.
+
+## E
+
+**E-value** -- The expected number of matches with a given score that would occur by chance in a database search.
+
+**Exon** -- A segment of DNA that is transcribed into RNA and retained in the mature mRNA.
+
+## F
+
+**FASTA** -- A text-based format for representing nucleotide or protein sequences.
+
+**Frameshift** -- A mutation that shifts the reading frame of a gene.
+
+## G
+
+**Gene** -- A segment of DNA that encodes a functional product (usually a protein).
+
+**GenBank** -- A database of genetic sequences maintained by NCBI.
+
+**Genome** -- The complete set of DNA in an organism.
+
+**GTF/GFF** -- File formats for gene annotation.
+
+## H
+
+**Homology** -- Similarity between sequences due to shared ancestry.
+
+**HSP** -- High-Scoring Pair. A local alignment with a high score in BLAST.
+
+## I
+
+**Indel** -- An insertion or deletion mutation.
+
+**Intron** -- A segment of DNA that is transcribed but removed during RNA processing.
+
+## K
+
+**K-mer** -- A substring of length k, used in sequence analysis and assembly.
+
+## L
+
+**Locus** -- A specific position on a chromosome.
+
+## M
+
+**mRNA** -- Messenger RNA. Carries genetic information from DNA to ribosomes for protein synthesis.
+
+**Mutation** -- A change in the DNA sequence.
+
+## N
+
+**NCBI** -- National Center for Biotechnology Information. Maintains GenBank and other databases.
+
+**Nucleotide** -- The building blocks of DNA and RNA: A, T, C, G (DNA) or A, U, C, G (RNA).
+
+## O
+
+**Open reading frame (ORF)** -- A sequence that could encode a protein (starts with ATG, ends with a stop codon).
+
+## P
+
+**PAM** -- Position-Specific Scoring Matrix. A matrix for comparing sequences.
+
+**PCR** -- Polymerase Chain Reaction. A method for amplifying DNA.
+
+**Phylogenetics** -- The study of evolutionary relationships between organisms.
+
+**Plasmid** -- A small, circular DNA molecule found in bacteria.
+
+**Polymorphism** -- Variation in DNA sequence between individuals.
+
+## Q
+
+**QC** -- Quality Control. Checking data quality before analysis.
+
+## R
+
+**Read** -- A short DNA sequence from a sequencing machine.
+
+**Reference genome** -- A representative genome sequence for an organism.
+
+**Restriction enzyme** -- A protein that cuts DNA at specific sequences.
+
+**RNA (Ribonucleic acid)** -- A molecule similar to DNA, involved in gene expression.
+
+**RNA-seq** -- A method for measuring gene expression by sequencing RNA.
+
+## S
+
+**Scaffold** -- A set of contigs ordered and oriented using additional information.
+
+**Sequence alignment** -- Arranging sequences to identify regions of similarity.
+
+**Single nucleotide polymorphism (SNP)** -- A single base change in DNA.
+
+**SRA** -- Sequence Read Archive. A database of raw sequencing data.
+
+## T
+
+**Transcription** -- Copying DNA to RNA.
+
+**Translation** -- Converting mRNA to protein.
+
+**tRNA** -- Transfer RNA. Carries amino acids to ribosomes during translation.
+
+## U
+
+**UniProt** -- A database of protein sequences and annotations.
+
+**UTR** -- Untranslated Region. Parts of mRNA that are not translated.
+
+## V
+
+**Variant** -- A difference in DNA sequence compared to a reference.
+
+**VCF** -- Variant Call Format. A file format for storing genetic variants.
+
+## W
+
+**Whole genome sequencing (WGS)** -- Sequencing an organism's entire genome.
+
+::: {.callout-tip}
+## More Terms
+
+For a comprehensive glossary of bioinformatics terms, see the NCBI glossary: [ncbi.nlm.nih.gov/glossary](https://www.ncbi.nlm.nih.gov/glossary/)
+:::

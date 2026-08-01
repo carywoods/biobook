@@ -1,5 +1,226 @@
 ---
-title: "Appendix A: Python Quick Reference"
+title: "Python Quick Reference"
 ---
 
-## Coming Soon
+# Python Quick Reference {#sec-python-reference}
+
+## Variables and Types
+
+```{python}
+#| eval: false
+# Strings
+dna = "ATGCGATCG"
+name = "hemoglobin"
+
+# Numbers
+length = len(dna)
+gc_content = 0.45
+
+# Boolean
+is_coding = True
+
+# None
+result = None
+```
+
+## Strings
+
+```{python}
+#| eval: false
+# String operations
+dna = "ATGCGATCG"
+dna.lower()          # "atgcgatcg"
+dna.upper()          # "ATGCGATCG"
+dna.replace("A", "T")  # "TTGCGTTCG"
+dna.count("G")       # 3
+len(dna)             # 9
+
+# Slicing
+dna[0:3]             # "ATG" (first 3 bases)
+dna[-3:]             # "TCG" (last 3 bases)
+dna[::-1]            # "GCTAGCGTA" (reverse)
+
+# f-strings
+print(f"Length: {len(dna)} bases")
+print(f"GC content: {gc_content:.1%}")
+```
+
+## Lists
+
+```{python}
+#| eval: false
+# Create a list
+bases = ["A", "T", "G", "C"]
+sequences = ["ATGCG", "GCTAG", "TTTTT"]
+
+# Access elements
+first = bases[0]      # "A"
+last = bases[-1]      # "C"
+
+# Add elements
+bases.append("N")     # ["A", "T", "G", "C", "N"]
+
+# List comprehension
+lengths = [len(s) for s in sequences]  # [5, 5, 5]
+
+# Filter
+long_seqs = [s for s in sequences if len(s) > 4]
+
+# Sort
+sorted_seqs = sorted(sequences, key=len, reverse=True)
+```
+
+## Dictionaries
+
+```{python}
+#| eval: false
+# Create a dictionary
+codon_table = {
+    "ATG": "M",  # Methionine (start)
+    "TAA": "*",  # Stop
+    "GCT": "A",  # Alanine
+    "TGT": "C",  # Cysteine
+}
+
+# Access values
+aa = codon_table["ATG"]  # "M"
+
+# Check if key exists
+if "ATG" in codon_table:
+    print("Found!")
+
+# Get with default
+aa = codon_table.get("XXX", "?")  # "?"
+
+# Iterate
+for codon, aa in codon_table.items():
+    print(f"{codon} -> {aa}")
+```
+
+## Loops
+
+```{python}
+#| eval: false
+# For loop
+for base in "ATGCG":
+    print(base)
+
+# For loop with index
+for i, base in enumerate("ATGCG"):
+    print(f"Position {i}: {base}")
+
+# Range
+for i in range(0, len(dna), 3):  # Step by 3
+    codon = dna[i:i+3]
+    print(codon)
+
+# While loop
+i = 0
+while i < len(dna):
+    print(dna[i])
+    i += 1
+```
+
+## Conditionals
+
+```{python}
+#| eval: false
+# If/elif/else
+codon = "ATG"
+if codon == "ATG":
+    print("Start codon")
+elif codon in ("TAA", "TAG", "TGA"):
+    print("Stop codon")
+else:
+    print("Coding codon")
+
+# Ternary
+status = "start" if codon == "ATG" else "other"
+
+# Check membership
+if "G" in dna:
+    print("Contains G")
+```
+
+## Functions
+
+```{python}
+#| eval: false
+def complement(base):
+    """Return the complement of a DNA base."""
+    pairs = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    return pairs.get(base, "N")
+
+def reverse_complement(dna):
+    """Return the reverse complement of a DNA sequence."""
+    return "".join(complement(b) for b in reversed(dna))
+
+# Call the function
+rc = reverse_complement("ATGCG")
+print(rc)  # "CGCAT"
+```
+
+## File I/O
+
+```{python}
+#| eval: false
+# Read a file
+with open("sequence.fasta") as f:
+    content = f.read()
+
+# Read line by line
+with open("sequence.fasta") as f:
+    for line in f:
+        print(line.strip())
+
+# Write a file
+with open("output.fasta", "w") as f:
+    f.write(">sequence1\n")
+    f.write("ATGCGATCG\n")
+```
+
+## Error Handling
+
+```{python}
+#| eval: false
+try:
+    with open("missing_file.txt") as f:
+        content = f.read()
+except FileNotFoundError:
+    print("File not found")
+except PermissionError:
+    print("Permission denied")
+except Exception as e:
+    print(f"Error: {e}")
+finally:
+    print("Done")
+```
+
+## Imports
+
+```{python}
+#| eval: false
+# Standard library
+import os
+import sys
+from collections import Counter
+
+# Third party
+import pandas as pd
+import numpy as np
+from Bio import SeqIO
+
+# Import with alias
+import matplotlib.pyplot as plt
+```
+
+::: {.callout-tip}
+## Python Style Guide
+
+Follow PEP 8 conventions:
+- Use 4 spaces for indentation (not tabs)
+- Keep lines under 79 characters
+- Use descriptive variable names (not single letters)
+- Add docstrings to functions
+- Use `snake_case` for functions and variables
+:::

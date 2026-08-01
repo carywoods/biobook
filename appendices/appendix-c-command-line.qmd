@@ -1,5 +1,196 @@
 ---
-title: "Appendix C: Linux/Command Line Essentials"
+title: "Linux/Command Line Essentials"
 ---
 
-## Coming Soon
+# Linux/Command Line Essentials {#sec-command-line}
+
+## Navigation
+
+```bash
+# Where am I?
+pwd
+
+# List files
+ls              # Basic list
+ls -la          # Detailed list with hidden files
+ls -lh          # Human-readable file sizes
+
+# Change directory
+cd /path/to/dir
+cd ..           # Go up one level
+cd ~            # Go to home directory
+cd -            # Go to previous directory
+```
+
+## File Operations
+
+```bash
+# Create files
+touch newfile.txt
+
+# Create directories
+mkdir -p path/to/new/dir
+
+# Copy
+cp file.txt backup.txt
+cp -r directory/ backup/
+
+# Move / rename
+mv oldname.txt newname.txt
+
+# Delete
+rm file.txt
+rm -r directory/    # Be careful!
+```
+
+## Viewing Files
+
+```bash
+# View entire file
+cat file.txt
+
+# View with line numbers
+cat -n file.txt
+
+# View beginning
+head file.txt           # First 10 lines
+head -20 file.txt       # First 20 lines
+
+# View end
+tail file.txt           # Last 10 lines
+tail -20 file.txt       # Last 20 lines
+
+# View interactively
+less file.txt           # Space to page, q to quit
+```
+
+## Searching
+
+```bash
+# Search for text in files
+grep "ATG" sequences.fasta
+grep -i "atg" sequences.fasta    # Case insensitive
+grep -c "ATG" sequences.fasta    # Count matches
+grep -n "ATG" sequences.fasta    # Show line numbers
+grep -r "ATG" directory/         # Recursive search
+
+# Find files
+find . -name "*.fasta"
+find . -name "*.py" -size +1k
+find . -type f -mtime -7         # Modified in last 7 days
+```
+
+## Text Processing
+
+```bash
+# Count lines, words, characters
+wc file.txt
+wc -l file.txt          # Just lines
+
+# Sort
+sort file.txt
+sort -n file.txt        # Numeric sort
+sort -k2 file.txt       # Sort by second column
+
+# Unique lines
+sort file.txt | uniq
+
+# Extract columns
+cut -f1,3 file.txt      # Tab-delimited columns 1 and 3
+cut -d',' -f2 file.csv  # Comma-delimited column 2
+
+# Replace text
+sed 's/ATG/XXX/g' file.txt    # Replace all ATG with XXX
+sed -i 's/ATG/XXX/g' file.txt # In-place edit
+```
+
+## Pipes and Redirection
+
+```bash
+# Pipe output to another command
+cat sequences.fasta | grep ">" | wc -l
+
+# Redirect to file
+echo "ATGCG" > output.txt       # Overwrite
+echo "GCTAG" >> output.txt      # Append
+
+# Redirect stderr
+command 2> error.log
+command > output.txt 2>&1       # Both stdout and stderr
+```
+
+## Process Management
+
+```bash
+# List running processes
+ps aux
+
+# Kill a process
+kill PID
+kill -9 PID             # Force kill
+
+# Run in background
+command &
+
+# Check background jobs
+jobs
+```
+
+## File Permissions
+
+```bash
+# View permissions
+ls -la
+
+# Make executable
+chmod +x script.py
+
+# Read/write for owner only
+chmod 600 file.txt
+```
+
+## Environment Variables
+
+```bash
+# View all env vars
+env
+
+# Set a variable
+export MY_VAR="value"
+
+# Use a variable
+echo $MY_VAR
+
+# Make permanent (add to ~/.bashrc)
+echo 'export MY_VAR="value"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+## Useful Shortcuts
+
+```bash
+# Tab completion
+# Press Tab to auto-complete file names and commands
+
+# Command history
+history             # Show command history
+!42                 # Run command #42
+!!                  # Run last command
+!grep               # Run last command starting with grep
+
+# Ctrl+C            # Cancel current command
+# Ctrl+D            # Exit shell
+# Ctrl+R            # Search command history
+# Ctrl+L            # Clear screen
+```
+
+::: {.callout-tip}
+## Practice
+
+The best way to learn the command line is to use it. Try these exercises:
+
+1. Navigate to a directory and list all `.py` files
+2. Count how many lines are in a FASTA file
+3. Find all sequences containing "ATG" in a file
+4. Sort a file by the second column
+:::

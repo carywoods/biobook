@@ -1,5 +1,75 @@
 ---
-title: "Appendix D: The Perl Legacy"
+title: "The Perl Legacy"
 ---
 
-## Coming Soon
+# The Perl Legacy {#sec-perl-legacy}
+
+## Why Perl Mattered
+
+For two decades, Perl was the dominant language in bioinformatics. From the late 1990s through the 2010s, nearly every bioinformatics tool, pipeline, and database parser was written in Perl.
+
+The reasons were practical:
+
+- **Text processing.** Perl was designed for text manipulation, and biological data (sequences, annotations, alignments) is fundamentally text.
+- **Regular expressions.** Perl's regex engine was the most powerful available, and pattern matching is central to bioinformatics.
+- **CPAN.** The Comprehensive Perl Archive Network provided thousands of modules, including BioPerl, a comprehensive toolkit for biological computation.
+- **Quick prototyping.** Perl's "there's more than one way to do it" philosophy made it easy to write scripts quickly.
+
+## The Books That Shaped the Field
+
+Three textbooks defined bioinformatics Perl programming:
+
+1. **"Beginning Perl for Bioinformatics"** by James Tisdall (O'Reilly, 2001). The standard introductory text. Taught Perl through biological problems: DNA manipulation, protein translation, GenBank parsing, and BLAST analysis.
+
+2. **"Mastering Perl for Bioinformatics"** by James Tisdall (O'Reilly, 2003). Advanced topics: object-oriented Perl, database access, web interfaces, and software engineering for bioinformatics.
+
+3. **"Bioinformatics, Biocomputing and Perl"** by Michael Moorhouse and Paul Barry (Wiley, 2004). A broader approach that included computing fundamentals alongside Perl programming.
+
+## Why Python Won
+
+By the mid-2010s, Python had overtaken Perl as the dominant bioinformatics language. The shift happened for several reasons:
+
+- **Readability.** Python's syntax is cleaner and easier to read, especially for collaborative projects.
+- **Scientific ecosystem.** NumPy, pandas, matplotlib, and scikit-learn gave Python a data science stack that Perl couldn't match.
+- **BioPython.** BioPython matured into a comprehensive toolkit that matched BioPerl's capabilities.
+- **Teaching.** Python was easier to teach to biology students with no programming background.
+- **Community.** The Python community grew faster, attracting more contributors and more resources.
+
+## The Perl Scripts in This Book
+
+The Perl scripts in this book's repository (`scripts/perl/companion/`) come from "Beginning Perl for Bioinformatics" by James Tisdall. They are the 49 companion scripts that accompanied the book, plus the `BeginPerlBioinfo.pm` utility module.
+
+These scripts are provided for historical context. They demonstrate the same biological problems solved in the Python chapters, but in Perl. Comparing the two approaches can be educational:
+
+- **Perl** tends to be more concise but harder to read
+- **Python** tends to be more verbose but clearer
+- Both use the same algorithmic approaches to biological problems
+
+## A Note on the Perl Community
+
+Perl is not dead. BioPerl is still maintained, and many production bioinformatics pipelines still run Perl scripts. The language continues to evolve (Perl 5.38+ and Raku, formerly Perl 6).
+
+However, for new projects and new students, Python is the better choice. It has a larger community, more learning resources, better scientific libraries, and stronger industry adoption.
+
+## Running the Perl Scripts
+
+If you want to run the historical Perl scripts:
+
+```bash
+# Install Perl (usually pre-installed on Linux/Mac)
+perl --version
+
+# Install BioPerl
+cpan Bio::Perl
+
+# Run a script
+perl scripts/perl/companion/example4-1.pl
+```
+
+The scripts require the `BeginPerlBioinfo.pm` module, which is included in the companion directory.
+
+::: {.callout-note}
+## The Full Source
+
+The original Perl scripts and their Python translations are available in the book's repository: [github.com/carywoods/biobook](https://github.com/carywoods/biobook)
+:::
