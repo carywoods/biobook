@@ -1,0 +1,55 @@
+---
+title: "Downloads"
+---
+
+# Downloads {.unnumbered}
+
+All scripts from this book are available for download. Each chapter has two versions of every script:
+
+- **Vanilla** scripts use standard Python and BioPython
+- **AI** scripts add LLM-powered interpretation (requires an API key)
+
+## Python Scripts
+
+78 scripts (39 vanilla + 39 AI)
+
+```bash
+# Download all Python scripts
+# Or clone the repository:
+git clone https://github.com/carywoods/biobook.git
+cd biobook/scripts/python
+```
+
+| Chapter | Scripts | Topic |
+|---------|---------|-------|
+| 1 | ch01_vanilla_01-03.py, ch01_ai_01-03.py | Intro, DNA basics, Iris dataset |
+| 2 | ch02_vanilla_01-04.py, ch02_ai_01-04.py | Python basics |
+| 3 | ch03_vanilla_01-04.py, ch03_ai_01-04.py | Central dogma |
+| 4 | ch04_vanilla_01-03.py, ch04_ai_01-03.py | Biological data |
+| 5 | ch05_vanilla_01-04.py, ch05_ai_01-04.py | Alignment and similarity |
+| 6 | ch06_vanilla_01-03.py, ch06_ai_01-03.py | Motifs and patterns |
+| 7 | ch07_vanilla_01-03.py, ch07_ai_01-03.py | Gene expression |
+| 8 | ch08_vanilla_01-02.py, ch08_ai_01-02.py | Protein structure |
+| 9 | ch09_vanilla_01-02.py, ch09_ai_01-02.py | Genome analysis |
+| 10 | ch10_vanilla_01-02.py, ch10_ai_01-02.py | Metagenomics |
+| 11 | ch11_vanilla_01-02.py, ch11_ai_01-02.py | Single-cell biology |
+| 12 | ch12_vanilla_01-02.py, ch12_ai_01-02.py | LLM reasoning |
+| 13 | ch13_vanilla_01-03.py, ch13_ai_01-03.py | Pipelines |
+| 14 | ch14_vanilla_01-02.py, ch14_ai_01-02.py | Capstone projects |
+
+## Perl Scripts (Historical Reference)
+
+49 companion scripts from "Beginning Perl for Bioinformatics" by James Tisdall.
+
+These are the original Perl scripts that inspired the Python translations in this book. They are provided for historical context and for students interested in comparing Perl and Python approaches to bioinformatics.
+
+```bash
+git clone https://github.com/carywoods/biobook.git
+cd biobook/scripts/perl/companion
+```
+
+## Repository
+
+The full source code, including all scripts, chapter files, and build configuration, is available at:
+
+[github.com/carywoods/biobook](https://github.com/carywoods/biobook)

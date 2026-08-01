@@ -35,6 +35,7 @@ book:
         - chapters/ch13-pipelines.qmd
         - chapters/ch14-capstone.qmd
     - references.qmd
+    - downloads.qmd
 
   appendices:
     - appendices/appendix-a-python.qmd
